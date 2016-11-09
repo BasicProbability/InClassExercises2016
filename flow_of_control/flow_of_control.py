@@ -1,57 +1,36 @@
 import random
 
-#1 The following function is commented out because it runs into an infinite loop. Fix this function only by adding code
-# and not deleting/modifying any  (and before you ask: no break statements are allowed!). Then uncomment it and run it.
+#1 The following while loop is commented out because it is an infinite loop.  Fix this loop only by adding code
+# and not deleting/modifying any (also, no break statements are allowed!). Then uncomment it and run it.
 # You will have to terminate the run by hand if the infinite loop still occurs.
 
-# def print_hello():
-#     i = 0
-#     while i < 100:
-#         print("Hello")
+# i = 0
+# while i < 100:
+#     print("Hello")
 
-#2 Recall that the factorial is of a positive integer x is defined as x! = x(x-1)!. The factorial of 0 is 0! = 1.
-# Implement the fucnction factorial that takes non-negative integers as arguments. If the input is not an integer
-# or negative, the function should print "Error: Invalid input <input value> to factorial()". Otherwise it should return the value
-# of the factorial function for that input. Once you written the factorial function, use it to implement the
-# binom_coefficient function which computes the binomial coefficient. If the second argument to that function is
-# greater than the first one, the function prints "Error: second argument <value of second argument>
-# value of of binom_coefficient is bigger than the first one <value of first argument>".
-# Notice that by calling factorial inside binomial_coefficient you have already guarded against invalid input in the
-# form of non-integers or negative numbers.
+#2 This week we are again given a list of twenty numbers that have been jumbled up. However, we randomly permute
+# this list in a different way each time the program starts. Write a for loop that brings the numbers into the correct
+# order no matter what the initial permutation is. You can also write code outside the for loop if needed. The only
+# thing that matter is that by the end of this exercise the numbers occur in their natural order in shuffled_list.
 
-def factorial(number):
-    pass
-def binomial_coefficient(n,k):
-    pass
+shuffled_list = list(range(1,21))
+random.shuffle(shuffled_list)
+print(shuffled_list)
 
-random_fraction = random.random()
-print("factorial gives error on fractions: {}"
-      .format(factorial(random_fraction) == "Error: Invalid input {} to factorial()".format(random_fraction)))
+# Your code goes here!
 
-# The check below is commented out because it will not terminate as long as factorial() has not been implemented
-# random_int = -random.randint(1000)
-# print("factorial gives error on negative numbers: {}"
-#       .format(factorial(random_int) == "Error: Invalid input {} to factorial()".format(random_int)))
+print("The list has been ordered correctly: {}".format(shuffled_list == list(range(1,21))))
 
-print("factorial computes correct value on 15: {}".format(factorial(15) == 1307674368000))
-
-random_big_int = random.randint(30,50)
-random_small_int = random.randint(0,30)
-print("binomial_coefficient gives error when second arg is bigger: {}"
-      .format(binomial_coefficient(random_small_int, random_big_int) ==
-              "Error: second argument {} value of of binom_coefficient is bigger than the first one {}"
-              .format(random_big_int, random_small_int)))
-
-print("binomial_coefficient gives correct result for 8,5: {}".format(binomial_coefficient(8,5) == 56))
-
-# 3 Binomial MLE: the file "binomial_sample.txt" contains 100000 random draws from a binomial distribution with
+#3 Binomial MLE: the file "binomial_sample.txt" contains 100000 random draws from a binomial distribution with
 # parameters n=100 and p=unknown. Implement the function binomial_mle that reads the file and computes the maximum
 # likelihood estimate for p.
 
-def binomial_mle(path_to_file):
-    # the with statement is a more concise way to process files. It also has the advantage that the file closes
-    # automatically when you leave the with block. That is, you don't need to write input_file.close() in the end.
-    with open(path_to_file) as input_file:
+mle = None
+
+# the with statement is a more concise way to process files. It also has the advantage that the file closes
+# automatically when you leave the with block. That is, you don't need to write input_file.close() in the end.
+# Additional question: what's the variance in that sample assuming that the MLE is correct?
+with open("binomial_sample.txt") as input_file:
         pass
 
-print("The binomial MLE is: {}".format(binomial_mle("binomial_sample.txt")))
+print("The binomial MLE is: {}".format(mle))
