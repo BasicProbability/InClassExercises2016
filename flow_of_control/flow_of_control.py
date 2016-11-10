@@ -15,6 +15,7 @@ import random
 # You are not allowed to use trivial solutions like shuffled_list = list(range(1,21)) or shuffled_list.sort(). The
 # point of this exercise is that you implement your own sorting algorithm!
 
+
 shuffled_list = list(range(1,21))
 random.shuffle(shuffled_list)
 print(shuffled_list)
@@ -37,6 +38,6 @@ var = None
 with open("binomial_sample.txt") as input_file:
     pass
 
-
 print("The binomial MLE is: {}".format(mle))
 print("The variance is: {}".format(var))
+
