@@ -11,7 +11,7 @@ import random
 #2 This week we are again given a list of twenty numbers that have been jumbled up. However, we randomly permute
 # this list in a different way each time the program starts. Use for loops that brings the numbers into the correct
 # order no matter what the initial permutation is. You can also write code outside the for loops if needed. The only
-# thing that matter is that by the end of this exercise the numbers occur in their natural order in shuffled_list.
+# thing that matters is that by the end of this exercise the numbers occur in their natural order in shuffled_list.
 # You are not allowed to use trivial solutions like shuffled_list = list(range(1,21)) or shuffled_list.sort(). The
 # point of this exercise is that you implement your own sorting algorithm!
 
