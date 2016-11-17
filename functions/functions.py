@@ -15,13 +15,13 @@ import random
 #
 # print_hello(10)
 
-#2 Recall that the factorial is of a positive integer x is defined as x! = x(x-1)!. The factorial of 0 is 0! = 1.
-# Implement the fucnction factorial that takes non-negative integers as arguments. If the input is not an integer
-# or negative, the function should print "Error: Invalid input <input value> to factorial()". Otherwise it should return the value
-# of the factorial function for that input. Once you written the factorial function, use it to implement the
-# binom_coefficient function which computes the binomial coefficient. If the second argument to that function is
-# greater than the first one, the function prints "Error: second argument <value of second argument>
-# value of of binom_coefficient is bigger than the first one <value of first argument>".
+#2 Recall that the factorial of a positive integer x is defined as x! = x(x-1)!. The factorial of 0 is 0! = 1.
+# Implement the function factorial that takes non-negative integers as arguments. If the input is not an integer
+# or negative, the function should print "Error: Invalid input <input value> to factorial()". Otherwise it should 
+# return the value of the factorial function for that input. Once you have  written the factorial function, use it to 
+# implement the binom_coefficient function which computes the binomial coefficient. If the second argument to that 
+# function is greater than the first one, the function prints 
+# "Error: second argument <value of second argument> of binom_coefficient is bigger than the first one <value of first argument>".
 # Notice that by calling factorial inside binomial_coefficient you have already guarded against invalid input in the
 # form of non-integers or negative numbers.
 
@@ -57,12 +57,12 @@ random_big_int = random.randint(30,50)
 random_small_int = random.randint(0,30)
 print("binomial_coefficient gives error when second arg is bigger: {}"
       .format(binomial_coefficient(random_small_int, random_big_int) ==
-              "Error: second argument {} value of of binom_coefficient is bigger than the first one {}"
+              "Error: second argument {} of binom_coefficient is bigger than the first one {}"
               .format(random_big_int, random_small_int)))
 
 print("binomial_coefficient gives correct result for 8,5: {}".format(binomial_coefficient(8,5) == 56))
 
-#3 Now here comes the joy of all logicians: lambda calculus! For simple functions that one only needs once
+#3 Now here comes the joy of all logicians: lambda calculus! For simple functions that are only used once
 # it is often convenient to define them on the fly. Such functions do not have names and are called anonymous functions.
 # Here is a simple example.
 print((lambda x : x**2) (3))
@@ -96,3 +96,22 @@ print("Number transformation works: {}".format(transform_number))
 print("Addition works: {}".format(add_up))
 print("Type check if types match works: {}".format(type_check_true))
 print("Type check if types don't match works: {}".format(type_check_false))
+
+
+first_char = (lambda x: )(alice) 
+first_letter = (lambda )(alice)
+number_1024_in_list = (lambda )(numbers1)
+number_1024_not_in_list = (lambda )(numbers2)
+transform_number = (lambda )(2)
+add_up = (lambda )(34,23)
+type_check_true = (lambda )(123,234)
+type_check_false = (lambda )("123",234)
+
+print("First char works: {}".format(first_char == " "))
+print("First letter works: {}".format(first_letter== "A"))
+print("Correct if 1024 in list: {}".format(number_1024_in_list == False))
+print("Correct if 1024 not in list: {}".format(number_1024_not_in_list == False))
+print("Number transformation works: {}".format(transform_number == "2"))
+print("Addition works: {}".format(add_up == 57))
+print("Type check if types match works: {}".format(type_check_true = True))
+print("Type check if types don't match works: {}".format(type_check_false = False))
