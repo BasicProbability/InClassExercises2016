@@ -12,6 +12,9 @@ The Heart-ache, and the thousand Natural shocks
 That Flesh is heir to? 'Tis a consummation
 Devoutly to be wished. To die, to sleep,'''
 
+words = hamlet.split()
+first_part = words
+
 solution = ""
 
 
