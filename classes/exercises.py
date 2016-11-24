@@ -27,8 +27,8 @@ print('Transaction works: {}'.format(your_account.transfer_money(my_account,200,
 
 # 3) Implement a class called Human. You are totally free to experiment here as long as you fulfill the following requirements:
 # - If no arguments are supplied, every human is initially 50cm tall, weighs 4kg and has blue eyes and is male
-# - Humans identity is checked by their name and age
+# - Human's identity is checked by their name and age
 # - Humans can grow older but never younger
-# - Their should be a method make_child() which takes as argument another Human. The method returns a new Human if the
+# - There should be a method make_child() which takes as argument another Human. The method returns a new Human if the
 # two humans involved in its generation are of different gender. The features of the new Human are randomly drawn from
 # both parents.
