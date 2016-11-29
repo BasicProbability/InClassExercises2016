@@ -1,5 +1,5 @@
 class InvalidArgumentException(Exception):
-    '''An Exception that should be raised whenever an invalid arugment for a function or method is provided.
+    '''An Exception that should be raised whenever an invalid argument for a function or method is provided.
     Note: In Python one would usually use the built-in ValueError in that case. We are designing our own Exception
     here solely for exercise purposes.'''
 
