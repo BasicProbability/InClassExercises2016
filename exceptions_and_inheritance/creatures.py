@@ -1,5 +1,5 @@
 import random
-from exceptions_and_inheritance.errors_solution import InvalidArgumentException
+from exceptions_and_inheritance.errors import InvalidArgumentException
 
 class Human(object):
     '''
@@ -32,6 +32,7 @@ class Human(object):
         '''Just resturn the name of the Human here.'''
         pass
 
+
 class Angel(object):
     '''A devine being that help Humans by blessing them.'''
 
@@ -50,23 +51,6 @@ class Angel(object):
         '''
         pass
 
-class Devil(object):
-    '''A hellish being that terrorises Humans.'''
-
-    def __init__(self, name):
-        '''Constructor
-
-        :param name: The name of this Devil
-        '''
-        pass
-
-    def terrorise(self, human):
-        '''Terrorise a Human. His mood will be horrible as a result and he will age by one year.
-
-        :param human: The Human to be terrorised
-        :raises: TypeError if human is not a Human
-        '''
-        pass
 
 class Lecturer(Human):
     '''A lecturer that gives grades to students.'''
@@ -80,26 +64,6 @@ class Lecturer(Human):
         :param student: The Student to be graded
         :param grade: The grade to be assigned
         :raises: InvalidArgumentException if grade is not the list of grades
-        :raises: TypeError if student is not a Student
-        '''
-        pass
-
-class EvilLecturer(Lecturer, Devil):
-    '''A creature that is a mixture of a Lecturer and a Devil. It has all the abilities of Lecturers and Devils, however,
-    it can only terrorise Students and no other Humans.
-    '''
-
-    def __init__(self, name):
-        '''Constructor
-
-        :param name: The name of this EvilLecturer
-        '''
-        pass
-
-    def terrorise(self, student):
-        '''Terrorise a Student. His mood will be horrible as a result and he will age by one year.
-
-        :param student: The Student to be terrorised
         :raises: TypeError if student is not a Student
         '''
         pass
@@ -134,6 +98,7 @@ class GoodLecturer(Lecturer, Angel):
         '''
         pass
 
+
 class Student(Human):
     '''Implements a Human who visits university. Each student has an initial default intelligence of 80 and a random ability
     that is an integer in {1,2,3,4,5}'''
@@ -150,4 +115,8 @@ class Student(Human):
 
     def study(self):
         '''Let this student study. His intelligence increased by his ability when studying.'''
+        pass
+
+    def procrastinate(selfs):
+        '''Let this student procrastinate. His intelligence decreased by his ability when procrastinating'''
         pass
