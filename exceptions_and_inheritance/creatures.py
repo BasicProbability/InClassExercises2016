@@ -1,10 +1,10 @@
 import random
-from exceptions_and_inheritance.errors_solution import InvalidArgumentException
+from exceptions_and_inheritance.errors import InvalidArgumentException
 
-class Human(object):
+class Hobbit(object):
     '''
-    Implements a humnan. Humans can have the specified genders and moods. Humans also have names and ages.
-    Humans are initialised with random moods.
+    Implements a hobbit. Hobbits can have the specified genders and moods. Hobbits also have names and ages.
+    Hobbits are initialised with random moods.
     '''
     moods = ["horrible", "bad", "soso", "good", "excellent"]
     genders = ["male", "female"]
@@ -12,142 +12,143 @@ class Human(object):
     def __init__(self, name, gender = "male", age=41):
         '''Constructor
 
-        :param name: The name of the Human
-        :param gender: The gender of the Human
-        :param age: The age of the Human
+        :param name: The name of the Hobbit
+        :param gender: The gender of the Hobbit
+        :param age: The age of the Hobbit
         :raises: InvalidArgumentException when the provided gender is not in the list of genders or
         the age is smaller than 0
         '''
         pass
 
     def setMood(self, mood):
-        '''Set the mood of this Human.
+        '''Set the mood of this Hobbit.
 
-        :param mood: The new mood of this Human
+        :param mood: The new mood of this Hobbit
         :raises: InvalidArgumentException if the mood is not in the list of moods
         '''
         pass
 
     def __str__(self):
-        '''Just resturn the name of the Human here.'''
+        '''Just resturn the name of the Hobbit here.'''
         pass
 
-class Angel(object):
-    '''A devine being that help Humans by blessing them.'''
+class Elf(object):
+    '''A devine being that help Hobbits by cheering them.'''
 
     def __init__(self, name):
         '''Constructor
 
-        :param name: The name of this Angel
+        :param name: The name of this Elf
         '''
         pass
 
-    def bless(self, human):
-        '''Bless a Human. As a result, the Humans mood is excellent.
+    def cheer(self, hobbit):
+        '''Cheer a Hobbit. As a result, the Hobbits mood is excellent.
 
-        :param human: The Human to be blessed
-        :raises: TypeError if human is not a Human
+        :param hobbit: The Hobbit to be cheered
+        :raises: TypeError if hobbit is not a Hobbit
         '''
         pass
 
-class Devil(object):
-    '''A hellish being that terrorises Humans.'''
+class Orc(object):
+    '''An orc that typically only scares Hobbits.'''
 
     def __init__(self, name):
         '''Constructor
 
-        :param name: The name of this Devil
+        :param name: The name of this Orc
         '''
         pass
 
-    def terrorise(self, human):
-        '''Terrorise a Human. His mood will be horrible as a result and he will age by one year.
+    def scare(self, hobbit):
+        '''Scare a Hobbit. Her mood will be horrible as a result and she will age by one year.
 
-        :param human: The Human to be terrorised
-        :raises: TypeError if human is not a Human
+        :param hobbit: The Hobbit to be scared
+        :raises: TypeError if hobbit is not a Hobbit
         '''
         pass
 
-class Lecturer(Human):
-    '''A lecturer that gives grades to students.'''
+class Cook(Hobbit):
+    '''A cook who trains new cooks (and apparently does not cook herself)'''
 
     grades = list(range(11))
 
-    def grade(self, student, grade):
-        '''Grade a Student. If the grade is higher than 8 the student's mood becomes excellent. If the grade is
-        in {6,7,8} the student's mood becomes good. The student's mood becomes bad for all lower grades.
+    def grade(self, pupil, grade):
+        '''Grade a Pupil. If the grade is higher than 8 the pupil's mood becomes excellent. If the grade is
+        in {6,7,8} the pupil's mood becomes good. The pupil's mood becomes bad for all lower grades.
 
-        :param student: The Student to be graded
+        :param pupil: The Pupil to be graded
         :param grade: The grade to be assigned
         :raises: InvalidArgumentException if grade is not the list of grades
-        :raises: TypeError if student is not a Student
+        :raises: TypeError if pupil is not a Pupil
         '''
         pass
 
-class EvilLecturer(Lecturer, Devil):
-    '''A creature that is a mixture of a Lecturer and a Devil. It has all the abilities of Lecturers and Devils, however,
-    it can only terrorise Students and no other Humans.
+class OrcCook(Cook, Orc):
+    '''A creature that is a mixture of a Cook and a Orc. It has all the abilities of Cooks and Orcs, however,
+    for some completely unknown reason it can only scare Pupils and no other Hobbits.
     '''
 
     def __init__(self, name):
         '''Constructor
 
-        :param name: The name of this EvilLecturer
+        :param name: The name of this OrcCook
         '''
         pass
 
-    def terrorise(self, student):
-        '''Terrorise a Student. His mood will be horrible as a result and he will age by one year.
+    def scare(self, pupil):
+        '''Scare a Pupil. Her mood will be horrible as a result and she will age by one year.
 
-        :param student: The Student to be terrorised
-        :raises: TypeError if student is not a Student
+        :param pupil: The Pupil to be scared
+        :raises: TypeError if pupil is not a Pupil
         '''
         pass
 
-
-class GoodLecturer(Lecturer, Angel):
-    '''A creature that this a mixture of a Lecturer and an Angel. It has all the abilities of Lecturers and Angels, however,
-    it can only bless Students and no other Humans. In addition, the GoodLecturer can also motivate students. This
-    will cause them to study.'''
+class ElfCook(Cook, Elf):
+    '''A creature that this a mixture of a Cook and an Elf. It has all the abilities of Cooks and Elfs, however,
+    it can only cheer Pupils and no other Hobbits. In addition, the ElfCooks can also motivate pupils. This
+    will cause them to cook.'''
 
     def __init__(self, name):
         '''Constructor
 
-        :param name: The name of this GoodLecturer
-        :param age: The age of the student
+        :param name: The name of this ElfCook
+        :param age: The age of the pupil
         '''
         pass
 
-    def bless(self, student):
-        '''Bless a Student. As a result, the Student's mood is excellent.
+    def cheer(self, pupil):
+        '''Cheer a Pupil. As a result, the Pupil's mood is excellent.
 
-        :param student: The Student to be blessed
-        :raises: TypeError if student is not a Student
+        :param pupil: The Pupil to be cheered
+        :raises: TypeError if pupil is not a Pupil
         '''
         pass
 
-    def motivate(self, student):
-        '''Motivate a student to study.
+    def motivate(self, pupil):
+        '''Motivate a pupil to cook.
 
-        :param student: The Student to be motivated
-        :raises: TypeError if student is not a Student
+        :param pupil: The Pupil to be motivated
+        :raises: TypeError if pupil is not a Pupil
         '''
         pass
 
-class Student(Human):
-    '''Implements a Human who visits university. Each student has an initial default intelligence of 80 and a random ability
-    that is an integer in {1,2,3,4,5}'''
+class Pupil(Hobbit):
+    '''Implements a Hobbit visiting cooking school.
+    When cooking, the productivity of the pupil increases on a scale of 1 to 100.
+    Each pupil has an initial default productivity of 5 and a random ability that
+    is an integer in {1,2,3,4,5}'''
 
-    def __init__(self, gender = "male", age=20, intelligence = 80):
+    def __init__(self, gender = "female", age=16, productivity = 5):
         '''Constructor
 
-        :param intelligence: The student's initial intelligence.
+        :param productivity: The pupil's initial productivity.
         :raises: InvalidArgumentException when the provided gender is not in the list of genders or
         the age is smaller than 0
-        :raises: InvalidArgumentException if intelligence is negative
+        :raises: InvalidArgumentException if productivity is negative
         '''
         pass
 
-    def study(self):
-        '''Let this student study. His intelligence increased by his ability when studying.'''
+    def cook(self):
+        '''Let this pupil cook. Her productivity increased by her ability when cooking.'''
         pass
