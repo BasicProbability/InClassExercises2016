@@ -24,7 +24,7 @@ bilbo = Hobbit("Bilbo", "blabla", 30)
 bilbo = Hobbit("Biblo", "male", -30)
 # this is the version of bob that we would like to keep around
 bilbo = Hobbit("Bilbo", "male", 30)
-print("Bob's name printed correclty: {}".format(str(bilbo) == "Bilbo"))
+print("Bob's name printed correctly: {}".format(str(bilbo) == "Bilbo"))
 
 galadriel = Elf("Galadriel")
 olgot = Orc("Olgot") # Pro tip: http://fantasynamegenerators.com/lotr-orc-names.php
