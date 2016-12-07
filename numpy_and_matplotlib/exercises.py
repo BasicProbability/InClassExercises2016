@@ -24,7 +24,6 @@ f = np.eye(2) # replace np.eye with your solution
 
 print("Element-wise multiplication works: {}".format((f == np.array([[6,6],[6,6]])).all()))
 
-<<<<<<< HEAD
 #3 Using numpy instead of for-loops: Assume you are given a list of coefficients. Further assume
 # that you want to use these coefficients to calculate the weighted sum for a bunch of values.
 # This can be done in a for-loop as shown below. Your job is to implement the second function
