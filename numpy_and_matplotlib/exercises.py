@@ -10,7 +10,7 @@ a = np.array([sample(numbers, 3) for _ in range(5)])
 b = np.array([sample(numbers, 2) for _ in range(5)])
 print(a)
 print(b)
-c = np.eye(1) # replace eye with your solution
+c = np.eye(1) # replace np.eye with your solution
 
 print("Matrix dot product correct: {}".format(c.shape == (3,2)))
 
@@ -20,10 +20,11 @@ print("Matrix dot product correct: {}".format(c.shape == (3,2)))
 # in matrix e.
 d = np.ones(2)*2
 e = np.ones(2)*3
-f = np.eye(2) # replace eye with your solution
+f = np.eye(2) # replace np.eye with your solution
 
 print("Element-wise multiplication works: {}".format((f == np.array([[6,6],[6,6]])).all()))
 
+<<<<<<< HEAD
 #3 Using numpy instead of for-loops: Assume you are given a list of coefficients. Further assume
 # that you want to use these coefficients to calculate the weighted sum for a bunch of values.
 # This can be done in a for-loop as shown below. Your job is to implement the second function
@@ -70,7 +71,7 @@ print('Function implementation correct: {}'.format(weighted_sum1(coefficients, v
 # column contains y-values. The columns are separated by tabs. Read the file and plot the data
 # points with the x values on the x-axis and the y-values on the y-axis. You will see that the result
 # is far from a straight line. Find a transformation of the y-values that puts them in an almost straight
-# line. Once you have achieved this, draw a line with intercept 0 and slope 1 across the plot. Finally,
+# line. Once you have achieved this, draw a line with y-intercept 0 and slope 1 across the plot. Finally,
 # label the x-axis with "x" the y-axis with the name of the transformation that you have applied and give
 # your plot a title. For reference, the points in your final plot and the line should look somewhat like
 # in the provided pdf. The style of your plot (colour, representation of points) may very well be different.
