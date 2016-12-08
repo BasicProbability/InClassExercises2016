@@ -1,6 +1,6 @@
 import numpy as np
 from random import sample
-
+from timeit import Timer
 
 #1 Below you are given two random matrices with shapes (5,3) and (5,2). Form a dot product such that
 # the resulting matrix has shape (3,2).
@@ -54,7 +54,7 @@ def weighted_sum1(coefficients, values):
 
     return result
 
-def weighted_sum2(coefficient, values):
+def weighted_sum2(coefficients, values):
     '''Compute the weighted sum of each list in a list of values. The weights are given by the coefficients.
 
     :param coefficients: The weights for the sums
@@ -65,6 +65,28 @@ def weighted_sum2(coefficient, values):
     # TODO: implement this
 
 print('Function implementation correct: {}'.format(weighted_sum1(coefficients, values) == weighted_sum2(coefficients, values)))
+
+# let's check some timings, see
+# https://docs.python.org/3.5/library/timeit.html for explanations
+# and https://stackoverflow.com/questions/8220801/how-to-use-timeit-module
+
+setup = '''
+from random import sample
+coefficients = sample(range(1000),500)
+values = [sample(range(1000),500) for _ in range(200)]
+from __main__ import weighted_sum1, weighted_sum2
+'''
+
+timer_obj1 = Timer("weighted_sum1(coefficients, values)", setup)
+timer_obj2 = Timer("weighted_sum2(coefficients, values)", setup)
+print("for-version took {} seconds".format(timer_obj1.timeit(10)))
+print("np-version took {} seconds".format(timer_obj2.timeit(10)))
+
+# experiment with these timings:
+# use larger vectors and matrices
+# use the repeat method to run the tests several times and only compare at the minimum times
+
+
 
 #4 The file data.txt contains pairs of numbers. The first columns contains x-values and the second
 # column contains y-values. The columns are separated by tabs. Read the file and plot the data
